@@ -88,7 +88,7 @@ based on `alpine` linux
 - `mnt` - empty folder for mount point
 - binary files:
     - `gpxelinux.0` or `pxelinux.0` - Obtain from SYSLINUX version 3.86 (vmware recomendation)
-    [syslinux-3.86.zip](https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/3.xx/syslinux-3.86.zip)
+    [syslinux-3.86.zip](https://mirrors.edge.kernel.org/pub/linux/utils/boot/syslinux/3.xx/syslinux-3.86.zip)  
     *NOTE: it's better to use `gpxelinux` instead `pxelinux`. This allow use http for files transfer. (tftp used only to send initial small files). With `tftp` can be observed `fail sending` in reason of network.*
     - `mboot.c32` (optional for menu `menu.c32`) copy from iso image
 - folder `pxelinux.cfg`. During boot server looking into this folder on tftp server. Server trying find individual for him files based on mac address and so on. [Details](https://wiki.syslinux.org/wiki/index.php?title=PXELINUX). Also it very visible in `dnsmasq` logs. At the end server looking `default` file. We are providing same - `pxelinux.cfg/default` for any pxe host.
@@ -152,9 +152,4 @@ losetup -d $LOOP
 [Configuring Dnsmasq to Support PXE Clients](https://docs.oracle.com/en/operating-systems/oracle-linux/7/install/ol7-install-pxe-dnsmasq.html)
 [PXE](https://wiki.archlinux.org/index.php/PXE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9))
 [Advanced Dnsmasq Tips and Tricks](https://www.linux.com/topic/networking/advanced-dnsmasq-tips-and-tricks/) - config tree.
-
-
-
-
-
 
