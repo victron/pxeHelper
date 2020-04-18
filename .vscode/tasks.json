@@ -1,0 +1,77 @@
+{
+    "version": "2.0.0",
+    "echoCommand": true,
+    "type": "shell",
+    "presentation": {
+        "showReuseMessage": false,
+    },
+    "tasks": [
+        {
+            "label": "build",
+            "presentation": {
+                "showReuseMessage": true,
+            },
+            "command": "go",
+            "args": [
+                "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$go"
+            ]
+        },
+        {
+            "label": "copy to VB",
+            "command": "scp",
+            "args": [
+                "-P", "2201",
+                "./${workspaceFolderBasename}",
+                "127.0.0.1:~/"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "deploy",
+            "presentation": {
+                "echo": false
+            },
+            "command": "echo",
+            "args": [
+                "============= file:",
+                "${workspaceFolderBasename}",
+                " on server ==============="
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "build",
+                "copy to VB"
+            ],
+            "problemMatcher": [
+                "$go"
+            ]
+        },
+        {
+            "label": "deploy and run",
+            "command": "ssh",
+            "args": [
+                "./${workspaceFolderBasename}"
+            ],
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "deploy"
+            ]
+        }
+    ]
+}
+
+
