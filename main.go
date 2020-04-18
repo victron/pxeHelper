@@ -88,8 +88,8 @@ func main() {
 	}
 	fileServer := http.FileServer(http.Dir(*imageFolder))
 	http.HandleFunc("/", handlerDefault)
-	http.HandleFunc(*pathKs, handlerKS)
-	http.Handle(*imageUrl, http.StripPrefix(*imageUrl+"/", fileServer))
+	http.HandleFunc("/"+*pathKs, handlerKS)
+	http.Handle("/"+*imageUrl+"/", http.StripPrefix("/"+*imageUrl+"/", fileServer))
 	log.Println("Listening on:", *listen_adr_port, "...")
 	log.Fatal(http.ListenAndServe(*listen_adr_port, nil))
 }
