@@ -8,7 +8,7 @@ import (
 	"text/template"
 )
 
-const DNSMASQ_CONFIG_OUTPUT = "./dnsmasq.cfg"
+const DNSMASQ_CONFIG_OUTPUT = "./dnsmasq.conf"
 
 func genDnsmasqConf(templateFile string) {
 	tmpl, err := template.ParseFiles(templateFile)

@@ -17,7 +17,7 @@ func init() {
 	matchKey = flag.String("key", "ip", "column name to do matching in csv file")
 	csvFile = flag.String("csv", "./table.csv", "path to csv file")
 	templateKS = flag.String("kstpl", "./templateKS.cfg", "path to KS template")
-	templateDnsmasq = flag.String("dnstpl", "./template_dnsmasq.cfg", "path to dnsmasq template")
+	templateDnsmasq = flag.String("dnstpl", "./template_dnsmasq.conf", "path to dnsmasq template")
 	listen_adr_port = flag.String("adrPort", ":80", "listen adress port. Example: localhost:80")
 	dnsmasqOnly = flag.Bool("dnsonly", false, "generate dnsmasq config and exit")
 	flag.Parse()
