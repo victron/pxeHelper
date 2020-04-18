@@ -1,0 +1,16 @@
+# cat /etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+# OAM network
+auto eth0
+iface eth0 inet static
+        address 10.72.24.167
+        netmask 255.255.255.192
+        gateway 10.72.24.129
+
+# dhcp domain
+auto eth1
+iface eth1 inet static
+        address 192.168.15.1
+        netmask 255.255.255.0
