@@ -1,3 +1,5 @@
 pxeHelper
 pidfile
 dnsmasq.conf
+docker/*.iso
+
