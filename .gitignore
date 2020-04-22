@@ -1,6 +1,5 @@
-pxeHelper
 pidfile
 dnsmasq.conf
-example/docker_VMware/*.iso
+*.iso
 
 
