@@ -23,7 +23,9 @@ need to put in project folder.
 - .iso image
 
 ## run
-`docker run -d --privileged --net host -v `pwd`:/var/lib/tftpboot/pxeHelper.d victron/pxehelper:latest`
+```
+docker run -d --privileged --net host -v `pwd`:/var/lib/tftpboot/pxeHelper.d victron/pxehelper:latest
+```
 
 `--privileged --net host` - requirement of dnsmasq
 
